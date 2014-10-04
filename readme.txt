@@ -1,39 +1,58 @@
 === Child Navigation ===
 Contributors: hildende
-Tags: navigation, pages, children, sub
+Tags: navigation, pages, child, children, sub, wp_nav_menu
 Requires at least: 3.2
-Tested up to: 3.8
-Stable tag: 1.1.0
+Tested up to: 4.0
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
-Adds support for child navigation to `wp_nav_menu()`
+Adds support for child navigation to wp_nav_menu()
 
 == Description ==
 
-This plugin adds support for displaying child pages of the current page to wp_nav_menu()
+With installing this plugin you add functionality to `wp_nav_menu()` to show
+only children of the current page or start with a specific navigation level.
 
 == Installation ==
+
 1. Upload `child-navigation` directory to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-= Usage =
-Set `children_only` as argument to `TRUE` in `wp_nav_menu()` to display only children of the current page
+= Show only children of current page =
 
-`wp_nav_menu( array ( 'children_only' => TRUE ) );`
+For showing all children of the current page set `children_only` as argument
+to `TRUE` in `wp_nav_menu()`.
+`<?php wp_nav_menu( array ( 'children_only' => TRUE ) ); ?>`
 
-Set `children_start_level` as argument with the wanted start level as value to show pages in the current root line starting with given level.
+= Show all items starting at specific navigation level =
 
-`wp_nav_menu( array ( 'children_start_level' => 2 ) );`
+For showing all pages in the current root line, starting at a specific
+navigation level, set `children_start_level` as argument with the wanted
+start level as value.
+`<?php wp_nav_menu( array ( 'children_start_level' => 2 ) ); ?>`
 
-Set `children_show_start_level` as argument to `TRUE` to show the start level (or the current page). if this is not set only child pages are shown.
+= Show current page/start level in child navigation =
 
-`wp_nav_menu( array ( 'children_show_start_level' => TRUE ) );`
-
+With `children_show_start_level` set to `TRUE` the current page is shown in
+navigation if `children_only` is set or starts with `children_start_level`,
+if `children_start_level` is set.
+`<?php
+wp_nav_menu( array (
+	'children_show_start_level' => TRUE,
+	// use either
+	'children_only' => TRUE,
+	// or
+	'children_start_level' => 2,
+) );
+?>`
 The argument `depth` will be relative to the first displayed level.
 
-
 == Changelog ==
+
+= 1.1.1 =
+* Tested up to WordPress 4.0
+* Improved code style following WordPress Coding Guidlines
 
 = 1.1.0 =
 * Added support for start level
