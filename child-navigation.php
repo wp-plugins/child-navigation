@@ -4,6 +4,7 @@
  * Description: Adds support for child navigations to wp_nav_menu()
  * Version: 1.1.1
  * Author: Dennis Hildenbrand
+ * Author URI: http://dennishildenbrand.com
  */
 
 

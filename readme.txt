@@ -1,6 +1,7 @@
 === Child Navigation ===
 Contributors: hildende
 Tags: navigation, pages, child, children, sub, wp_nav_menu
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KRBU2JDQUMWP4
 Requires at least: 3.2
 Tested up to: 4.2
 Stable tag: 1.1.1
